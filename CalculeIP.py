@@ -3,8 +3,8 @@ import ipaddress,sys
 try: 
     ip = sys.argv[1]
 except IndexError: 
-    print("merci de preciser l'adresse ip  est le masque de sous reseaux dans la ligne de commande ")
-    print("FORMAT ACCEPTER: 192.168.0.1/24")
+    print("Merci de préciser l'adresse ip  et le masque de sous-réseau dans la ligne de commande")
+    print("FORMAT ACCEPTÉ: 192.168.0.1/24")
     sys.exit()
 
 
@@ -20,7 +20,7 @@ class CalculatorIP:
             hostmask = ipaddress.IPv4Interface(ip).hostmask 
             broadcast = ipaddress.IPv4Network(ip).broadcast_address
         except ValueError:
-            print("Format non accepter")
+            print("Format non accepté")
         print(f"first: {first} | last: {last} | netmask: {netmask} | hostmask: {hostmask} | broadcast: {broadcast}")        
 
     def host(self):
@@ -32,6 +32,6 @@ class CalculatorIP:
         try: 
             print("Binaire: {:b}".format(ipaddress.IPv4Address(ip)))
         except ipaddress.AddressValueError:
-            print("Merci d'envlever le '/' est le nombre qui le suit svp")
+            print("Merci d'enlever le '/' et le nombre qui le suis svp")
     
 
